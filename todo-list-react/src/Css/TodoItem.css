@@ -1,0 +1,16 @@
+.itemstyle{
+ background-color: lightgray;   
+}
+
+#inputCheck{
+    margin-right: 5px;
+}
+
+#btnStyle{
+    background-color: red;
+    float: right;
+    padding: 5px 8px;
+    border-radius: 50%;
+    margin-top: -3px;
+    cursor: pointer;
+}

@@ -1,0 +1,13 @@
+form{
+    display: flex;
+    padding: 3px 0px 5px 0px;
+}
+
+.textInput{
+    flex: 10;
+    padding: 3px;
+}
+
+.submitBtn{
+    flex: 2;
+}
