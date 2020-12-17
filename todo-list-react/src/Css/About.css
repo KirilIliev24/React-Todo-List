@@ -1,5 +1,7 @@
-div{
+.aboutDiv{
     background-color: gray;
     color: white;
     text-align: center;
+    margin-top: 25px;
+    padding: 5px;
 }
