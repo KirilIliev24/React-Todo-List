@@ -18,13 +18,16 @@ export class TodoItem extends Component {
     render() {
         const {id, title} = this.props.todo;
         return (
-            <div style = {this.itemStyle()}>
-                <p>
-                    <input id="inputCheck" type ="checkbox" onChange={this.props.toggleComplete.bind(this, id)}></input>
-                    {title}
-                    <button id="btnStyle" onClick={this.props.deleteTodo.bind(this, id)}>X</button>
-                </p>
+            <div className = "container-fluid">
+                 <div className = "row" style = {this.itemStyle()}>
+                    <div className = "col-md-12"> 
+                        <input id="inputCheck" type ="checkbox" onChange={this.props.toggleComplete.bind(this, id)}></input>
+                        {title}
+                        <button id="btnStyle" onClick={this.props.deleteTodo.bind(this, id)}>X</button>
+                    </div>
+                </div>
             </div>
+           
         )
     }
 }

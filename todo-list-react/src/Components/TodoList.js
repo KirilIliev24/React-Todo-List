@@ -3,10 +3,16 @@ import TodoItem from './TodoItem';
 import PropTypes from 'prop-types';
 
 class TodoList extends Component {
+  
   render(){
-    return this.props.todos.map((todo) => (
-        <TodoItem key={todo.id} todo = {todo} toggleComplete = {this.props.toggleComplete} deleteTodo = {this.props.deleteTodo}/>
-    ));
+    return (
+      <div className = "container-fluid">
+        {this.props.todos.map((todo) => (
+          <TodoItem key={todo.id} todo = {todo} toggleComplete = {this.props.toggleComplete} deleteTodo = {this.props.deleteTodo}/>
+        ))}
+        <button onClick = {this.props.delCompleted}>Delete completed todos</button>
+      </div>
+    )
   }
 }
 

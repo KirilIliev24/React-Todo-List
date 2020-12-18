@@ -10,7 +10,8 @@ import axios from 'axios';
 
 class App extends Component {
 state = {
-  todos: [] 
+  todos: [],
+  completedId: []
 }
 
 componentDidMount() {
@@ -43,6 +44,24 @@ addTodo = (title) => {
     }).then(res => this.setState({todos: [...this.state.todos, res.data]}));
 }
 
+delCompleted = (e) => {
+    this.setState({ completedId: [...this.state.todos.filter(todo => 
+        todo.completed === true
+      )]});
+
+     for (const todo in this.state.completedId) {
+      axios.delete('https://jsonplaceholder.typicode.com/todos/${todo.id}')
+      .then(res =>  this.setState({todos: [...this.state.todos.filter(todo => 
+        todo.id !== todo.id
+      )]}));
+     }
+     this.setState({ completedId: []});
+
+    this.setState({ todos: [...this.state.todos.filter(todo => 
+      todo.completed === false)]});
+};
+
+
   render(){
     return (
       <Router>
@@ -51,7 +70,7 @@ addTodo = (title) => {
           <Route exact path = "/" render = {props => (
             <React.Fragment>
               <AddTodo addTodo = {this.addTodo}/>
-              <TodoList todos = {this.state.todos} toggleComplete = {this.toggleComplete} deleteTodo = {this.deleteTodo}/>
+              <TodoList todos = {this.state.todos} toggleComplete = {this.toggleComplete} deleteTodo = {this.deleteTodo} delCompleted = {this.delCompleted}/>
             </React.Fragment>
           )}></Route>
           <Route path = "/about" component = {About}/>

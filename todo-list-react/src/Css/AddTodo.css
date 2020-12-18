@@ -10,4 +10,11 @@ form{
 
 .submitBtn{
     flex: 2;
+    margin: 0px 2px  0px; 
+}
+
+.delBtn{
+    flex: 2;
+    background-color: lightcoral;
+    margin: 0px 2px  0px; 
 }

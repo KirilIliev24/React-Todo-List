@@ -18,21 +18,24 @@ export class AddTodo extends Component {
     
     render() {
         return (
-            <form onSubmit = {this.onSubmit}>
-                <input 
-                    type = "text" 
-                    name = "title" 
-                    placeholder = "Add a title" 
-                    className = "textInput"
-                    value = {this.state.title}
-                    onChange = {this.onChange}
-                />
-                <input 
-                    type = "submit" 
-                    value = "submit" 
-                    className = "submitBtn"
-                />
-            </form>
+            <div className = "container">
+                <form onSubmit = {this.onSubmit}>
+                    <input 
+                        type = "text" 
+                        name = "title" 
+                        placeholder = "Add a title" 
+                        className = "textInput"
+                        value = {this.state.title}
+                        onChange = {this.onChange}
+                    />
+                    <input 
+                        type = "submit" 
+                        value = "submit" 
+                        className = "submitBtn"
+                        onSubmit = {this.onSubmit}
+                    />
+                </form>
+            </div>
         )
     }
 }
